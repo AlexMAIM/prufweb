@@ -14,9 +14,11 @@
     <nav class="navbar">
         <div class="nav-content">
             <img src="https://i.postimg.cc/xT4RZBpg/Pruf-logo.gif" alt="PRUF Logo" class="nav-logo">
-            <button class="hamburger-menu" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-ellipsis-v"></i>
             </button>
+        </div>
+        <div class="menu-overlay">
             <ul class="nav-links">
                 <li><a href="#home">Acasă</a></li>
                 <li><a href="#about">Despre</a></li>
@@ -36,6 +38,10 @@
                 <a href="https://discord.gg/fMycRR7hWt" class="discord-button" target="_blank">
                     <i class="fab fa-discord"></i> Discord
                 </a>
+            </div>
+            <div class="tester-announcement">
+                <i class="fas fa-star announcement-icon"></i>
+                <p>Aplicațiile pentru testeri sunt deschise! <a href="https://forms.gle/YvSTesZxU8L17FrY9" target="_blank">Aplică aici</a></p>
             </div>
         </div>
     </section>
@@ -135,10 +141,22 @@
     </footer>
 
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.hamburger-menu').classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
     </script>
 </body>
 </html>
