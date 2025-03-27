@@ -150,6 +150,17 @@
             document.body.classList.toggle('menu-open');
         }
 
+        // Închide meniul când se face click în afara lui
+        document.addEventListener('click', (e) => {
+            if (menuOverlay.classList.contains('active') && 
+                !menuOverlay.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
