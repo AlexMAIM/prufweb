@@ -87,6 +87,25 @@ body {
     margin-bottom: 0.3rem;
 }
 
+.nav-links a[href*="patreon"] {
+    background: linear-gradient(135deg, rgba(249, 104, 84, 0.3), rgba(232, 91, 70, 0.2));
+    border: 1px solid rgba(249, 104, 84, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a[href*="patreon"]:before {
+    content: "\f3d9"; /* Patreon icon code */
+    font-family: "Font Awesome 5 Brands";
+    margin-right: 8px;
+    color: #f96854;
+}
+
+.nav-links a[href*="patreon"]:hover {
+    background: linear-gradient(135deg, rgba(249, 104, 84, 0.4), rgba(232, 91, 70, 0.3));
+    border-color: rgba(249, 104, 84, 0.6);
+}
+
 .nav-links a:hover {
     color: #FFF;
     opacity: 1;
@@ -294,6 +313,11 @@ p {
 .social-links a:hover {
     color: white;
     transform: translateY(-3px);
+}
+
+/* Adding Patreon to social links in footer */
+.social-links a[href*="patreon"] {
+    color: #f96854;
 }
 
 /* Animations */
@@ -655,51 +679,5 @@ p {
 @media (max-width: 768px) {
     .hamburger-menu {
         display: none;
-    }
-}
-
-.tester-announcement {
-    margin-top: 2rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(211, 84, 0, 0.2));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    animation: pulse 2s infinite;
-}
-
-.announcement-icon {
-    color: #DEB887;
-    font-size: 1.5rem;
-}
-
-.tester-announcement p {
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-.tester-announcement a {
-    color: #FFF;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.tester-announcement a:hover {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: underline;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-    100% {
-        transform: scale(1);
     }
 }
