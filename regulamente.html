@@ -116,6 +116,7 @@
         const navMenu = document.getElementById('nav-menu');
         const navToggle = document.getElementById('nav-toggle');
         const navOverlay = document.getElementById('nav-overlay');
+        const navLinks = document.querySelectorAll('.nav__link'); // Folosește o singură dată
 
         if (navToggle) {
             navToggle.addEventListener('click', () => {
@@ -131,7 +132,6 @@
                 document.body.style.overflow = '';
             });
         }
-        const navLinks = document.querySelectorAll('.nav__link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (!link.classList.contains('btn') && navMenu.classList.contains('active')) {
@@ -153,12 +153,12 @@
         });
 
         /* Active Nav Link Highlighting (Corrected) */
-        const navLinks = document.querySelectorAll('.nav__link');
+        // ...NU mai redeclara navLinks aici...
         const currentLocation = window.location.pathname.split('/').pop();
 
         // Remove active class from all links first
         navLinks.forEach(link => {
-             const isExternal = link.hostname !== window.location.hostname;
+            const isExternal = link.hostname !== window.location.hostname;
             if (!isExternal) {
                 link.classList.remove('active');
             }
