@@ -691,3 +691,49 @@ ul {
     gap: 2rem;
     margin-top: 3rem;
 }
+
+/* Event Section */
+.event {
+  background-color: var(--bg-secondary);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.event__description, .event__bonus, .event__rules, .event__cta {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.event__rewards {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.event__rewards li {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.event__rewards i {
+  color: var(--accent-primary);
+  font-size: 1.3rem;
+  width: 1.5em; /* Ensures all icons occupy the same width */
+  text-align: center; /* Centers the icon within its allocated width */
+}
+
+.event__cta .highlight {
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+.event__rules i {
+  color: var(--accent-secondary);
+  margin-right: 0.3rem;
+}
